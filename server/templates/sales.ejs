@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> </title>
+    <style>
+        /* Add border to the table */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+
+        /* Style table headers */
+        th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            background-color: #f2f2f2;
+        }
+
+        /* Style table data cells */
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <p>Dear <%= name %>,</p>
+    <p><%= salesDetails %></p>
+    <h3>Sales Report</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Product</th>
+                <th>Quantity Sold</th>
+                <th>Revenue</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% salesData.forEach(function(sale) { %>
+                <tr>
+                    <td><%= sale.date %></td>
+                    <td><%= sale.product %></td>
+                    <td><%= sale.quantitySold %></td>
+                    <td><%= sale.revenue %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</body>
+</html>
